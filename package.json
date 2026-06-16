@@ -1,0 +1,24 @@
+{
+  "name": "datadriven",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "testChrome": "npx playwright test --project chromium",
+    "testFireFox": "npx playwright test --project firefox",
+    "testWebkit": "npx playwright test --project webkit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.2",
+    "allure-playwright": "^3.10.0"
+  },
+  "dependencies": {
+    "exceljs": "^3.4.0",
+    "xlsx": "^0.18.5"
+  }
+}
