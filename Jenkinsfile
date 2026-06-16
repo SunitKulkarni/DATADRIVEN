@@ -21,7 +21,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm ci'
+                bat 'npm ci'
             }
         }
 
@@ -29,7 +29,7 @@ pipeline {
             steps {
                 // --with-deps pulls in required OS-level libraries on Linux agents.
                 // Drop --with-deps if your agent doesn't allow sudo / apt installs.
-                sh 'npx playwright install --with-deps'
+                bat 'npx playwright install'
             }
         }
 
@@ -39,7 +39,7 @@ pipeline {
                 // shows as UNSTABLE (not a hard failure) when tests fail,
                 // so you still get a report instead of a broken pipeline.
                 catchError(buildResult: 'UNSTABLE', stageResult: 'FAILURE') {
-                    sh 'npx playwright test'
+                    bat 'npx playwright test'
                 }
             }
         }
